@@ -1,11 +1,12 @@
 describe('blinkyDancer', function() {
 
-  var blinkyDancer, clock;
+  var blinkyDancer, popDancer, clock;
   var timeBetweenSteps = 100;
 
   beforeEach(function() {
     clock = sinon.useFakeTimers();
-    blinkyDancer = makeBlinkyDancer(10, 20, timeBetweenSteps);
+    blinkyDancer = new makeBlinkyDancer(10, 20, timeBetweenSteps);
+    popDancer = new PopDancer(10, 20, timeBetweenSteps);
   });
 
   it('should have a jQuery $node object', function() {
@@ -31,4 +32,12 @@ describe('blinkyDancer', function() {
       expect(blinkyDancer.step.callCount).to.be.equal(2);
     });
   });
+
+  describe('PopDance', function() {
+    it('should have a jQuery $node object', function() {
+      expect(blinkyDancer.$node).to.be.an.instanceof(jQuery);
+    });
+  });
+
+
 });

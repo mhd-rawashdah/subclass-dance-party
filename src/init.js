@@ -22,12 +22,19 @@ $(document).ready(function() {
 
     // make a dancer with a random position
 
-    var dancer = dancerMakerFunction(
+    var dancer = new makeBlinkyDancer(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
+    var dancer1 = new PopDancer(
+      $("body").height() * Math.random(),
+      $("body").width() * Math.random(),
+      Math.random() * 1000
+    );
+
     $('body').append(dancer.$node);
+    $('body').append(dancer1.$node);
   });
 });
 
